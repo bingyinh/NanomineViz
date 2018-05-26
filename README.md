@@ -30,7 +30,7 @@ visualization for nanomine project
   ```
 - after you create the .netrc file under /apps, you need to edit this file.
   ```
-  machine some_url (like 129.105.90.149)
+  machine some_url (like 000.000.000.000)
   login some_username (like testuser1)
   password some_password (like testpwd1)
   ```

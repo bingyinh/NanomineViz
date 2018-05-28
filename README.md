@@ -10,7 +10,7 @@ visualization for nanomine project
 - install NanomineViz app following:
   ```
   cd /apps
-  sudo git clone https://github.com/raymondino/NanomineViz.git
+  sudo git clone https://github.com/Duke-MatSci/NanomineViz.git
   cd /apps/NanomineViz/data
   sudo wget https://raw.githubusercontent.com/tetherless-world/nanomine-ontology/master/xml_ingest.setl.ttl
   sudo wget https://raw.githubusercontent.com/tetherless-world/nanomine-ontology/master/ontology.setl.ttl

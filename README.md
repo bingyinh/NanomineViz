@@ -30,16 +30,18 @@ visualization for nanomine project
   ```
 - after you create the .netrc file under /apps, you need to edit this file.
   ```
-  machine some_url (like 000.000.000.000)
+  machine some_url (like 000.000.000.000 or nanomine.oit.duke.edu) -- this is the address of the nanomine server
   login some_username (like testuser1)
   password some_password (like testpwd1)
   ```
 - after you edit the .netrc file, in your terminal type:
+  - the xml_ingest.setl.ttl file references the nanomine server protocol, address and port and may need to  be edited
   ```
   cd /apps/whyis
   python manage.py load -i /apps/NanomineViz/data/ontology.setl.ttl -f turtle
   python manage.py load -i /apps/NanomineViz/data/xml_ingest.setl.ttl -f turtle
   ```
+  - The load process can be monitored with 'sudo tail -f /var/log/celery/w1.log'
 - go to http://localhost/ to login with your credentials during "createuser" command
 - go to http://localhost/viz to access the visualization
 

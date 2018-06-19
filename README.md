@@ -2,9 +2,9 @@
 visualization for nanomine project
 
 # Installation
-- install [whyis](http://tetherless-world.github.io/whyis/install) using this command
+- install [whyis](http://tetherless-world.github.io/whyis/install) using this command (bluedevil-oit version contains proxy work-around)
   ```
-  bash < <(curl -skL https://raw.githubusercontent.com/tetherless-world/whyis/release/install.sh)
+  bash < <(curl -skL https://raw.githubusercontent.com/bluedevil-oit/whyis/release/install.sh)
   ```
 - whyis will be installed in /apps/whyis
 - install NanomineViz app following:

@@ -51,7 +51,7 @@ Config = dict(
         "/apps/NanomineViz/templates",
     ],
     WHYIS_CDN_DIR = "/apps/NanomineViz/static",
-
+    DEFAULT_ANONYMOUS_READ=True,
     # LOGGING
     LOGGER_NAME = "%s_log" % project_name,
     LOG_FILENAME = "/var/log/%s/output-%s.log" % (project_name,str(datetime.now()).replace(' ','_')),

@@ -1,7 +1,7 @@
 # NanomineViz
 visualization for nanomine project
 
-# Installation
+# Installation (REQUIRES ubuntu 16.04 -- 18.04 will not work yet)
 ### Note: if installing on a virtual machine, be sure to allocate at least 8G Memory, 2 CPUs and 50G Disk
 - install [whyis](http://tetherless-world.github.io/whyis/install) using this command (bluedevil-oit version contains proxy work-around)
   ```

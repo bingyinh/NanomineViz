@@ -385,8 +385,20 @@
                                     var sample = responseText.results.bindings[i].sample.value.substring(samplePrefix.length, responseText.results.bindings[i].sample.value.length);
                                     var x = parseFloat(responseText.results.bindings[i].x.value);
                                     var y = parseFloat(responseText.results.bindings[i].y.value);
-                                    if(responseText.results.bindings[i].hasOwnProperty('xUnit')) xUnit = responseText.results.bindings[i].xUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].xUnit.value.length);
-                                    if(responseText.results.bindings[i].hasOwnProperty('yUnit')) yUnit = responseText.results.bindings[i].yUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].yUnit.value.length);
+                                    if(responseText.results.bindings[i].hasOwnProperty('xUnit')) {
+                                        xUnit = responseText.results.bindings[i].xUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].xUnit.value.length);
+                                        if(xUnit == "kelvin") {
+                                            x = (x - 273.15).toFixed(2);
+                                            xUnit = "celsius";
+                                        }
+                                    }
+                                    if(responseText.results.bindings[i].hasOwnProperty('yUnit')) {
+                                        yUnit = responseText.results.bindings[i].yUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].yUnit.value.length);
+                                        if(yUnit == "kelvin") {
+                                            y = (y - 273.15).toFixed(2);
+                                            yUnit = "celsius";
+                                        }
+                                    }
                                     var matrixPolymer = responseText.results.bindings[i].matrixPolymer.value.substring(compoundPrefix.length, responseText.results.bindings[i].matrixPolymer.value.length);
                                     var fillerPolymer = responseText.results.bindings[i].fillerPolymer.value.substring(compoundPrefix.length, responseText.results.bindings[i].fillerPolymer.value.length);
                                     var doi = responseText.results.bindings[i].doi.value;

@@ -387,16 +387,56 @@
                                     var y = parseFloat(responseText.results.bindings[i].y.value);
                                     if(responseText.results.bindings[i].hasOwnProperty('xUnit')) {
                                         xUnit = responseText.results.bindings[i].xUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].xUnit.value.length);
+                                        // temperature unit conversion (all to celsius)
                                         if(xUnit == "kelvin") {
-                                            x = (x - 273.15).toFixed(2);
+                                            // x = (x - 273.15).toFixed(2);
+                                            x = Math.round((x - 273.15) * 1e2) / 1e2;
                                             xUnit = "celsius";
+                                        }
+                                        // pressure unit conversion (all to mpa)
+                                        if(xUnit == "gpa") {
+                                            x = Math.round((x * 1e3) * 1e2) / 1e2;
+                                            xUnit = "mpa";
+                                        }
+                                        if(xUnit == "kpa") {
+                                            x = Math.round((x / 1e3) * 1e2) / 1e2;
+                                            xUnit = "mpa";
+                                        }
+                                        // resistivity unit conversion (all to 10^15 ohm-cm)
+                                        if(xUnit == "ohm-cm" || xUnit == "omega-cm") {
+                                            x = Math.round((x / 1e15) * 1e4) / 1e4;
+                                            xUnit = "1E15 ohm-cm"
+                                        }
+                                        if(xUnit == "ohm-meter") {
+                                            x = Math.round((x / 1e13) * 1e4) / 1e4;
+                                            xUnit = "1E15 ohm-cm"
                                         }
                                     }
                                     if(responseText.results.bindings[i].hasOwnProperty('yUnit')) {
                                         yUnit = responseText.results.bindings[i].yUnit.value.substring(unitPrefix.length, responseText.results.bindings[i].yUnit.value.length);
+                                        // temperature unit conversion (all to celsius)
                                         if(yUnit == "kelvin") {
-                                            y = (y - 273.15).toFixed(2);
+                                            // y = (y - 273.15).toFixed(2);
+                                            y = Math.round((y - 273.15) * 1e2) / 1e2;
                                             yUnit = "celsius";
+                                        }
+                                        // pressure unit conversion (all to mpa)
+                                        if(yUnit == "gpa") {
+                                            y = Math.round((y * 1e3) * 1e2) / 1e2;
+                                            yUnit = "mpa";
+                                        }
+                                        if(yUnit == "kpa") {
+                                            y = Math.round((y / 1e3) * 1e2) / 1e2;
+                                            yUnit = "mpa";
+                                        }
+                                        // resistivity unit conversion (all to 10^15 ohm-cm)
+                                        if(yUnit == "ohm-cm" || yUnit == "omega-cm") {
+                                            y = Math.round((y / 1e15) * 1e4) / 1e4;
+                                            yUnit = "1E15 ohm-cm"
+                                        }
+                                        if(yUnit == "ohm-meter") {
+                                            y = Math.round((y / 1e13) * 1e4) / 1e4;
+                                            yUnit = "1E15 ohm-cm"
                                         }
                                     }
                                     var matrixPolymer = responseText.results.bindings[i].matrixPolymer.value.substring(compoundPrefix.length, responseText.results.bindings[i].matrixPolymer.value.length);

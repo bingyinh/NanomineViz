@@ -3,9 +3,8 @@ visualization for nanomine project
 
 # Installation (REQUIRES ubuntu 16.04 -- 18.04 will not work yet)
 ### Note: if installing on a virtual machine, be sure to allocate at least 8G Memory, 2 CPUs and 50G Disk
-- install [whyis](http://tetherless-world.github.io/whyis/install) using this command (bluedevil-oit version contains proxy work-around)
   ```
-  bash < <(curl -skL https://raw.githubusercontent.com/bluedevil-oit/whyis/release/install.sh)
+  bash < <(curl -skL https://raw.githubusercontent.com/tetherless-world/whyis/master/install.sh)
   ```
 - whyis will be installed in /apps/whyis
 - install NanomineViz app following:
